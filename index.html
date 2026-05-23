@@ -333,24 +333,41 @@
         <!-- Privacy & Policy -->
         <section id="privacy">
             <div class="section-header" data-aos="fade-up">
-                <h2 data-i18n="privacy_full_title">Comprehensive Privacy Policy</h2>
-                <p data-i18n="privacy_full_desc">Last Updated: May 2026. Your privacy is our highest priority.</p>
+                <h2 data-i18n="privacy_full_title">Privacy Policy</h2>
+                <p data-i18n="privacy_full_desc">Last Updated: May 23, 2026. Your privacy is our highest priority.</p>
             </div>
-            <div class="policy-container" data-aos="fade-up" data-aos-delay="200" style="max-height: 600px; overflow-y: auto;">
-                <h3 data-i18n="pol_data_collection_title">1. Data Collection and Storage</h3>
-                <p data-i18n="pol_data_collection_desc" style="line-height: 1.8; margin-bottom: 20px;">Dukkan operates fundamentally as a local-first application. The vast majority of your data (inventory, sales records, customer details, budgets) is stored directly on your physical device. We do not collect, transmit, or store this data on our servers unless you explicitly enable Cloud Sync.</p>
-                
-                <h3 data-i18n="pol_cloud_sync_title">2. Cloud Synchronization</h3>
-                <p data-i18n="pol_cloud_sync_desc" style="line-height: 1.8; margin-bottom: 20px;">If you utilize our optional Cloud Sync feature to backup data or share it across multiple devices, your data is encrypted locally before transmission. We utilize AES-256 end-to-end encryption. The keys to decrypt this data remain on your devices; Dukkan personnel cannot access your business metrics.</p>
+            <div class="policy-container" data-aos="fade-up" data-aos-delay="200" style="max-height: 800px; overflow-y: auto;">
+                <p data-i18n="pol_intro" style="line-height: 1.8; margin-bottom: 20px;"><strong>Privacy-First Promise:</strong> Your business data belongs to you. We do not sell, rent, or trade your personal information. We minimize data collection to only what is necessary. You can use the app entirely offline without creating an account.</p>
 
-                <h3 data-i18n="pol_third_party_title">3. Third-Party Services</h3>
-                <p data-i18n="pol_third_party_desc" style="line-height: 1.8; margin-bottom: 20px;">We do not sell, rent, or trade your personal or business information to third parties. We may use anonymous, aggregated crash reports (via services like Firebase Crashlytics) strictly to improve application stability. You can opt out of crash reporting in the app settings.</p>
+                <h3 data-i18n="pol_data_collection_title">1. Information We Collect</h3>
+                <p data-i18n="pol_data_collection_desc" style="line-height: 1.8; margin-bottom: 20px;"><strong>Business Data (Stored Locally on Your Device):</strong> Product inventory, customer details (names, phone numbers, email addresses, physical addresses, notes), supplier information, sales & purchase transactions, loan/debt records, budget entries, and staff information. <strong>Account Data:</strong> Email address and password (encrypted). Optional Google account information (email, name, profile photo) when using Google Sign-In. <strong>Payment Proof Images:</strong> Photos of receipts you voluntarily attach to transactions, stored locally. <strong>We do NOT collect:</strong> GPS location, contact lists, advertising IDs, browsing history, biometric data, or health information.</p>
 
-                <h3 data-i18n="pol_user_rights_title">4. Your Data Rights</h3>
-                <p data-i18n="pol_user_rights_desc" style="line-height: 1.8; margin-bottom: 20px;">You retain full ownership of your data. You have the right to export your entire database at any time (via CSV or JSON). You also have the right to request immediate deletion of any synced data from our servers via the "Delete Account & Data" option within the application.</p>
+                <h3 data-i18n="pol_use_title">2. How We Use Your Information</h3>
+                <p data-i18n="pol_use_desc" style="line-height: 1.8; margin-bottom: 20px;">We use your data solely to provide app functionality, optional cloud backup (with your consent), authentication, AI insights (only when you choose to use them), subscription processing, and anonymous crash reporting to improve stability.</p>
 
-                <h3 data-i18n="pol_contact_title">5. Contact Us</h3>
-                <p data-i18n="pol_contact_desc" style="line-height: 1.8; margin-bottom: 20px;">If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact our Data Protection Officer at privacy@dukkan.app.</p>
+                <h3 data-i18n="pol_storage_title">3. Data Storage & Security</h3>
+                <p data-i18n="pol_storage_desc" style="line-height: 1.8; margin-bottom: 20px;"><strong>Local-First:</strong> All business data is stored locally on your device in an encrypted SQLite database. The app works fully offline. <strong>Cloud Sync (Optional):</strong> Data is encrypted on your device before transmission using AES-256. Decryption keys remain on your authorized devices only. <strong>Security Measures:</strong> End-to-end encryption, secure authentication via Supabase Auth, and automatic session management.</p>
+
+                <h3 data-i18n="pol_third_party_title">4. Third-Party Services</h3>
+                <p data-i18n="pol_third_party_desc" style="line-height: 1.8; margin-bottom: 20px;">We use Supabase (auth & cloud sync), Google Sign-In (OAuth), Google Play Billing (subscriptions), Google Gemini AI (business insights — only when you use AI features), and WhatsApp (external receipt sharing initiated by you). We do not sell your data. We do not use your data for advertising or profiling.</p>
+
+                <h3 data-i18n="pol_ai_title">5. AI-Generated Content Disclaimer</h3>
+                <p data-i18n="pol_ai_desc" style="line-height: 1.8; margin-bottom: 20px;">Dukkan uses Google Gemini AI to provide business insights. AI-generated content is for informational purposes only and does not constitute professional financial, legal, or tax advice. Business data is transmitted to Google's servers when you use AI features. Do not input sensitive personal information into AI queries.</p>
+
+                <h3 data-i18n="pol_notifications_title">6. Local Notifications</h3>
+                <p data-i18n="pol_notifications_desc" style="line-height: 1.8; margin-bottom: 20px;">We use local notifications for loan due date reminders, low stock alerts, daily budget summaries, and pending payment proof reviews. These are generated entirely on your device — no notification data is sent to our servers.</p>
+
+                <h3 data-i18n="pol_rights_title">7. Your Rights</h3>
+                <p data-i18n="pol_rights_desc" style="line-height: 1.8; margin-bottom: 20px;">You have the right to access, export (CSV/JSON/Excel/PDF), edit, and delete your data at any time. You can disable Cloud Sync, opt out of crash reporting, and delete your account permanently via the "Delete Account & Data" option in app settings.</p>
+
+                <h3 data-i18n="pol_children_title">8. Children's Privacy</h3>
+                <p data-i18n="pol_children_desc" style="line-height: 1.8; margin-bottom: 20px;">Dukkan is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+                <h3 data-i18n="pol_deletion_title">9. Account Deletion</h3>
+                <p data-i18n="pol_deletion_desc" style="line-height: 1.8; margin-bottom: 20px;">You can delete your account and all associated data from app settings. All cloud-synced data is permanently deleted. This action is irreversible. Deleting the app without using "Delete Account" may leave cloud data intact.</p>
+
+                <h3 data-i18n="pol_contact_title">10. Contact Us</h3>
+                <p data-i18n="pol_contact_desc" style="line-height: 1.8; margin-bottom: 20px;">If you have questions about this Privacy Policy, contact us at <strong>kirkukimhamad6@gmail.com</strong>. Admin/Support: hamagag52@gmail.com. We aim to respond within 48 hours.</p>
             </div>
         </section>
     </main>
@@ -359,7 +376,7 @@
         <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px;">
             <img src="icon.png" alt="Dukkan Icon" style="height: 32px; width: 32px; border-radius: 8px;">
         </div>
-        <p data-i18n="footer_text">&copy; 2026 Dukkan Team. Designed for excellence.</p>
+        <p data-i18n="footer_text">&copy; 2026 krdteam. Designed for excellence.</p>
         <div style="margin-top:20px; display:flex; justify-content:center; gap:20px;">
             <a href="#" style="color:var(--text-dim); text-decoration:none;" data-i18n="footer_link_1">Terms of Service</a>
             <a href="#" style="color:var(--text-dim); text-decoration:none;" data-i18n="footer_link_2">Support</a>
@@ -404,20 +421,31 @@
                 guarantee_title: "The \"Absolute Peace of Mind\" Guarantee",
                 guarantee_desc: "We promise that your data is never sold, analyzed for ads, or accessed by anyone but you. Our cloud sync is an encrypted bridge between your devices, nothing more.",
                 
-                privacy_full_title: "Comprehensive Privacy Policy",
-                privacy_full_desc: "Last Updated: May 2026. Your privacy is our highest priority.",
-                pol_data_collection_title: "1. Data Collection and Storage",
-                pol_data_collection_desc: "Dukkan operates fundamentally as a local-first application. The vast majority of your data (inventory, sales records, customer details, budgets) is stored directly on your physical device. We do not collect, transmit, or store this data on our servers unless you explicitly enable Cloud Sync.",
-                pol_cloud_sync_title: "2. Cloud Synchronization",
-                pol_cloud_sync_desc: "If you utilize our optional Cloud Sync feature to backup data or share it across multiple devices, your data is encrypted locally before transmission. We utilize AES-256 end-to-end encryption. The keys to decrypt this data remain on your devices; Dukkan personnel cannot access your business metrics.",
-                pol_third_party_title: "3. Third-Party Services",
-                pol_third_party_desc: "We do not sell, rent, or trade your personal or business information to third parties. We may use anonymous, aggregated crash reports (via services like Firebase Crashlytics) strictly to improve application stability. You can opt out of crash reporting in the app settings.",
-                pol_user_rights_title: "4. Your Data Rights",
-                pol_user_rights_desc: "You retain full ownership of your data. You have the right to export your entire database at any time (via CSV or JSON). You also have the right to request immediate deletion of any synced data from our servers via the \"Delete Account & Data\" option within the application.",
-                pol_contact_title: "5. Contact Us",
-                pol_contact_desc: "If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact our Data Protection Officer at privacy@dukkan.app.",
+                privacy_full_title: "Privacy Policy",
+                privacy_full_desc: "Last Updated: May 23, 2026. Your privacy is our highest priority.",
+                pol_intro: "<strong>Privacy-First Promise:</strong> Your business data belongs to you. We do not sell, rent, or trade your personal information. We minimize data collection to only what is necessary. You can use the app entirely offline without creating an account.",
+                pol_data_collection_title: "1. Information We Collect",
+                pol_data_collection_desc: "<strong>Business Data (Stored Locally on Your Device):</strong> Product inventory, customer details (names, phone numbers, email addresses, physical addresses, notes), supplier information, sales & purchase transactions, loan/debt records, budget entries, and staff information. <strong>Account Data:</strong> Email address and password (encrypted). Optional Google account information (email, name, profile photo) when using Google Sign-In. <strong>Payment Proof Images:</strong> Photos of receipts you voluntarily attach to transactions, stored locally. <strong>We do NOT collect:</strong> GPS location, contact lists, advertising IDs, browsing history, biometric data, or health information.",
+                pol_use_title: "2. How We Use Your Information",
+                pol_use_desc: "We use your data solely to provide app functionality, optional cloud backup (with your consent), authentication, AI insights (only when you choose to use them), subscription processing, and anonymous crash reporting to improve stability.",
+                pol_storage_title: "3. Data Storage & Security",
+                pol_storage_desc: "<strong>Local-First:</strong> All business data is stored locally on your device in an encrypted SQLite database. The app works fully offline. <strong>Cloud Sync (Optional):</strong> Data is encrypted on your device before transmission using AES-256. Decryption keys remain on your authorized devices only. <strong>Security Measures:</strong> End-to-end encryption, secure authentication via Supabase Auth, and automatic session management.",
+                pol_third_party_title: "4. Third-Party Services",
+                pol_third_party_desc: "We use Supabase (auth & cloud sync), Google Sign-In (OAuth), Google Play Billing (subscriptions), Google Gemini AI (business insights — only when you use AI features), and WhatsApp (external receipt sharing initiated by you). We do not sell your data. We do not use your data for advertising or profiling.",
+                pol_ai_title: "5. AI-Generated Content Disclaimer",
+                pol_ai_desc: "Dukkan uses Google Gemini AI to provide business insights. AI-generated content is for informational purposes only and does not constitute professional financial, legal, or tax advice. Business data is transmitted to Google's servers when you use AI features. Do not input sensitive personal information into AI queries.",
+                pol_notifications_title: "6. Local Notifications",
+                pol_notifications_desc: "We use local notifications for loan due date reminders, low stock alerts, daily budget summaries, and pending payment proof reviews. These are generated entirely on your device — no notification data is sent to our servers.",
+                pol_rights_title: "7. Your Rights",
+                pol_rights_desc: "You have the right to access, export (CSV/JSON/Excel/PDF), edit, and delete your data at any time. You can disable Cloud Sync, opt out of crash reporting, and delete your account permanently via the \"Delete Account & Data\" option in app settings.",
+                pol_children_title: "8. Children's Privacy",
+                pol_children_desc: "Dukkan is not intended for children under 13. We do not knowingly collect personal information from children under 13.",
+                pol_deletion_title: "9. Account Deletion",
+                pol_deletion_desc: "You can delete your account and all associated data from app settings. All cloud-synced data is permanently deleted. This action is irreversible. Deleting the app without using \"Delete Account\" may leave cloud data intact.",
+                pol_contact_title: "10. Contact Us",
+                pol_contact_desc: "If you have questions about this Privacy Policy, contact us at <strong>kirkukimhamad6@gmail.com</strong>. Admin/Support: hamagag52@gmail.com. We aim to respond within 48 hours.",
                 
-                footer_text: "© 2026 Dukkan Team. Designed for excellence.",
+                footer_text: "© 2026 krdteam. Designed for excellence.",
                 footer_link_1: "Terms of Service", footer_link_2: "Support"
             },
             ar: {
@@ -451,20 +479,31 @@
                 guarantee_title: "ضمان \"راحة البال المطلقة\"",
                 guarantee_desc: "نعدك بأن بياناتك لا تُباع أبداً، ولا تُحلل للإعلانات، ولا يتم الوصول إليها من قبل أي شخص سواك. المزامنة السحابية هي جسر مشفر بين أجهزتك فقط.",
                 
-                privacy_full_title: "سياسة الخصوصية الشاملة",
-                privacy_full_desc: "تاريخ آخر تحديث: مايو 2026. خصوصيتك هي أولويتنا القصوى.",
-                pol_data_collection_title: "1. جمع البيانات وتخزينها",
-                pol_data_collection_desc: "يعمل دكان بشكل أساسي كتطبيق محلي. يتم تخزين الغالبية العظمى من بياناتك (المخزون، سجلات المبيعات، تفاصيل العملاء، الميزانيات) مباشرة على جهازك الفعلي. نحن لا نجمع أو ننقل أو نخزن هذه البيانات على خوادمنا ما لم تقم بتمكين ميزة المزامنة السحابية صراحةً.",
-                pol_cloud_sync_title: "2. المزامنة السحابية",
-                pol_cloud_sync_desc: "إذا كنت تستخدم ميزة المزامنة السحابية الاختيارية لدينا لعمل نسخة احتياطية من البيانات أو مشاركتها عبر أجهزة متعددة، فسيتم تشفير بياناتك محليًا قبل النقل. نحن نستخدم تشفير AES-256 من طرف إلى طرف. تبقى مفاتيح فك تشفير هذه البيانات على أجهزتك؛ لا يمكن لموظفي دكان الوصول إلى مقاييس عملك.",
-                pol_third_party_title: "3. خدمات الطرف الثالث",
-                pol_third_party_desc: "نحن لا نبيع أو نؤجر أو نتاجر بمعلوماتك الشخصية أو التجارية لأطراف ثالثة. قد نستخدم تقارير الأعطال المجمعة والمجهولة المصدر (عبر خدمات مثل Firebase Crashlytics) بدقة لتحسين استقرار التطبيق. يمكنك إلغاء الاشتراك في تقارير الأعطال من إعدادات التطبيق.",
-                pol_user_rights_title: "4. حقوق بياناتك",
-                pol_user_rights_desc: "أنت تحتفظ بملكية كاملة لبياناتك. لديك الحق في تصدير قاعدة بياناتك بالكامل في أي وقت (عبر CSV أو JSON). لديك أيضًا الحق في طلب الحذف الفوري لأي بيانات متزامنة من خوادمنا عبر خيار \"حذف الحساب والبيانات\" داخل التطبيق.",
-                pol_contact_title: "5. اتصل بنا",
-                pol_contact_desc: "إذا كانت لديك أي أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو ممارسات البيانات الخاصة بنا، يرجى الاتصال بمسؤول حماية البيانات لدينا على privacy@dukkan.app.",
+                privacy_full_title: "سياسة الخصوصية",
+                privacy_full_desc: "تاريخ آخر تحديث: ٢٣ مايو ٢٠٢٦. خصوصيتك هي أولويتنا القصوى.",
+                pol_intro: "<strong>وعد الخصوصية:</strong> بيانات عملك تخصك. نحن لا نبيع أو نؤجر أو نتاجر بمعلوماتك الشخصية. نحن نقلل من جمع البيانات إلى الحد الأدنى اللازم. يمكنك استخدام التطبيق بالكامل دون اتصال بالإنترنت وبدون إنشاء حساب.",
+                pol_data_collection_title: "١. المعلومات التي نجمعها",
+                pol_data_collection_desc: "<strong>بيانات العمل (تُخزن محليًا على جهازك):</strong> مخزون المنتجات، تفاصيل العملاء (الأسماء، أرقام الهواتف، عناوين البريد الإلكتروني، العناوين الفعلية، الملاحظات)، معلومات الموردين، معاملات المبيعات والمشتريات، سجلات القروض/الديون، إدخالات الميزانية، ومعلومات الموظفين. <strong>بيانات الحساب:</strong> عنوان البريد الإلكتروني وكلمة المرور (مشفرة). معلومات حساب Google الاختيارية (البريد الإلكتروني، الاسم، صورة الملف الشخصي) عند استخدام تسجيل الدخول عبر Google. <strong>صور إثبات الدفع:</strong> صور الإيصالات التي ترفقها طوعًا بالمعاملات، تُخزن محليًا. <strong>لا نجمع:</strong> موقع GPS، قوائم جهات الاتصال، معرفات الإعلانات، سجل التصفح، البيانات البيومترية، أو المعلومات الصحية.",
+                pol_use_title: "٢. كيف نستخدم معلوماتك",
+                pol_use_desc: "نستخدم بياناتك فقط لتوفير وظائف التطبيق، النسخ الاحتياطي الاختياري للسحابة (بموافقتك)، المصادقة، رؤى الذكاء الاصطناعي (فقط عندما تختار استخدامها)، معالجة الاشتراكات، وتقارير الأعطال المجهولة لتحسين الاستقرار.",
+                pol_storage_title: "٣. تخزين البيانات والأمان",
+                pol_storage_desc: "<strong>الأولوية المحلية:</strong> يتم تخزين جميع بيانات العمل محليًا على جهازك في قاعدة بيانات SQLite مشفرة. يعمل التطبيق بالكامل دون اتصال بالإنترنت. <strong>المزامنة السحابية (اختيارية):</strong> يتم تشفير البيانات على جهازك قبل الإرسال باستخدام AES-256. تبقى مفاتيح فك التشفير على أجهزتك المصرح لها فقط. <strong>إجراءات الأمان:</strong> التشفير من طرف إلى طرف، المصادقة الآمنة عبر Supabase Auth، وإدارة الجلسات التلقائية.",
+                pol_third_party_title: "٤. خدمات الطرف الثالث",
+                pol_third_party_desc: "نستخدم Supabase (المصادقة والمزامنة السحابية)، Google Sign-In (OAuth)، Google Play Billing (الاشتراكات)، Google Gemini AI (رؤى الأعمال — فقط عند استخدامك لميزات الذكاء الاصطناعي)، وWhatsApp (مشاركة الإيصالات الخارجية التي تبدأها أنت). نحن لا نبيع بياناتك. نحن لا نستخدم بياناتك للإعلانات أو التنميط.",
+                pol_ai_title: "٥. إخلاء مسؤولية المحتوى المولد بالذكاء الاصطناعي",
+                pol_ai_desc: "يستخدم دكان Google Gemini AI لتقديم رؤى الأعمال. المحتوى المولد بالذكاء الاصطناعي هو لأغراض إعلامية فقط ولا يُشكل مشورة مالية أو قانونية أو ضريبية احترافية. يتم نقل بيانات الأعمال إلى خوادم Google عندما تستخدم ميزات الذكاء الاصطناعي. لا تُدخل معلومات شخصية حساسة في استعلامات الذكاء الاصطناعي.",
+                pol_notifications_title: "٦. الإشعارات المحلية",
+                pol_notifications_desc: "نستخدم الإشعارات المحلية لتذكيرك بمواعيد استحقاق القروض، تنبيهات انخفاض المخزون، ملخصات الميزانية اليومية، ومراجعات إثبات الدفع المعلقة. يتم إنشاؤها بالكامل على جهازك — لا يتم إرسال أي بيانات إشعارات إلى خوادمنا.",
+                pol_rights_title: "٧. حقوقك",
+                pol_rights_desc: "لديك الحق في الوصول إلى بياناتك وتصديرها (CSV/JSON/Excel/PDF) وتعديلها وحذفها في أي وقت. يمكنك تعطيل المزامنة السحابية، وإلغاء الاشتراك في تقارير الأعطال، وحذف حسابك بشكل دائم عبر خيار \"حذف الحساب والبيانات\" في إعدادات التطبيق.",
+                pol_children_title: "٨. خصوصية الأطفال",
+                pol_children_desc: "دكان غير مخصص للأطفال دون سن ١٣ عامًا. نحن لا نجمع عن قصد معلومات شخصية من أطفال دون سن ١٣.",
+                pol_deletion_title: "٩. حذف الحساب",
+                pol_deletion_desc: "يمكنك حذف حسابك وجميع البيانات المرتبطة به من إعدادات التطبيق. يتم حذف جميع البيانات المتزامنة مع السحابة بشكل دائم. هذا الإجراء لا رجعة فيه. قد يؤدي حذف التطبيق دون استخدام \"حذف الحساب\" إلى بقاء البيانات السحابية سليمة.",
+                pol_contact_title: "١٠. اتصل بنا",
+                pol_contact_desc: "إذا كانت لديك أي أسئلة حول سياسة الخصوصية هذه، تواصل معنا على <strong>kirkukimhamad6@gmail.com</strong>. الدعم/الإدارة: hamagag52@gmail.com. نهدف للرد خلال ٤٨ ساعة.",
 
-                footer_text: "© 2026 فريق دكان. صُمم للتميز.",
+                footer_text: "© 2026 krdteam. صُمم للتميز.",
                 footer_link_1: "شروط الخدمة", footer_link_2: "الدعم"
             },
             ku: {
@@ -498,20 +537,31 @@
                 guarantee_title: "گەڕەنتی \"ئارامی دەروون\"",
                 guarantee_desc: "بەڵێن دەدەین کە زانیارییەکانت هەرگیز نافرۆشرێن، بۆ ڕیکلام بەکارناهێنرێن، و جگە لە خۆت کەس ناتوانێت بیانبینێت.",
                 
-                privacy_full_title: "سیاسەتی پاراستنی زانیاری گشتگیر",
-                privacy_full_desc: "دوایین نوێکردنەوە: ئایاری ٢٠٢٦. پاراستنی زانیارییەکانت لە پێشینەی کارەکانمانە.",
-                pol_data_collection_title: "١. کۆکردنەوە و هەڵگرتنی زانیاری",
-                pol_data_collection_desc: "ئەپی دکان لە بنەڕەتدا وەک ئەپێکی لۆکاڵی (ناوخۆیی) کاردەکات. بەشێکی زۆری زانیارییەکانت (کۆگا، تۆماری فرۆشتن، زانیاری کڕیاران، بودجە) ڕاستەوخۆ لەسەر ئامێرەکەت هەڵدەگیرێن. ئێمە ئەم زانیارییانە کۆناکەینەوە، نایانگوازینەوە، و لەسەر سێرڤەرەکانمان هەڵیانناگرین مەگەر خۆت بە ئارەزووی خۆت تایبەتمەندی هاوکاتکردنی هەژماری (Cloud Sync) چالاک بکەیت.",
-                pol_cloud_sync_title: "٢. هاوکاتکردنی هەژماری (Cloud Sync)",
-                pol_cloud_sync_desc: "ئەگەر تایبەتمەندی هاوکاتکردنی هەژماری بەکاربهێنیت بۆ پاراستنی زانیارییەکانت یان بەکارهێنانی لەسەر چەند ئامێرێک، زانیارییەکانت پێش ناردنیان لەناو ئامێرەکەتدا کۆد دەکرێن. ئێمە سیستەمی کۆدکردنی AES-256 بەکاردەهێنین. کلیلەکانی کردنەوەی ئەم زانیارییانە تەنها لەناو ئامێرەکانی خۆتدا دەمێننەوە؛ کارمەندانی دکان ناتوانن بچنە ناو زانیارییە بازرگانییەکانتەوە.",
-                pol_third_party_title: "٣. خزمەتگوزاری لایەنی سێیەم",
-                pol_third_party_desc: "ئێمە زانیارییە کەسی یان بازرگانییەکانت نافرۆشین، بەکرێیان نادەین، و مامەڵەیان پێوە ناکەین لەگەڵ هیچ لایەنێکی سێیەمدا. لەوانەیە ڕاپۆرتی نەناسراو دەربارەی کێشە تەکنیکییەکان بەکاربهێنین (لە ڕێگەی خزمەتگوزارییەکانی وەک Firebase Crashlytics) تەنها بۆ باشترکردنی جێگیری ئەپەکە. دەتوانیت لە ڕێکخستنەکانی ئەپەکەدا ناردنی ئەم ڕاپۆرتانە ڕابگریت.",
-                pol_user_rights_title: "٤. مافەکانی زانیارییەکانت",
-                pol_user_rights_desc: "تۆ خاوەنی تەواوی زانیارییەکانیت. مافی ئەوەت هەیە لە هەر کاتێکدا دەتەوێت تەواوی داتابەیسەکەت دەربهێنیت (لە ڕێگەی CSV یان JSON). هەروەها مافی ئەوەت هەیە داوای سڕینەوەی دەستبەجێی هەموو زانیارییەکانت بکەیت لە سێرڤەرەکانمان لە ڕێگەی دوگمەی \"سڕینەوەی هەژمار و زانیارییەکان\" لەناو ئەپەکەدا.",
-                pol_contact_title: "٥. پەیوەندیمان پێوە بکە",
-                pol_contact_desc: "ئەگەر هەر پرسیار یان تێبینییەکت هەیە دەربارەی ئەم سیاسەتی پاراستنی زانیارییە یان شێوازی مامەڵەکردنمان بە زانیارییەکان، تکایە پەیوەندی بکە بە بەرپرسی پاراستنی داتاکانمان لە ڕێگەی ئیمەیڵی privacy@dukkan.app.",
+                privacy_full_title: "سیاسەتی تایبەتمەندی",
+                privacy_full_desc: "دوایین نوێکردنەوە: ٢٣ی ئایاری ٢٠٢٦. پاراستنی زانیارییەکانت لە پێشینەی کارەکانمانە.",
+                pol_intro: "<strong>بەڵێنی تایبەتمەندی:</strong> زانیارییە بازرگانییەکانت تایبەتە بە تۆ. ئێمە نافرۆشین و ناکرێیان نادەین و مامەڵەیان پێوە ناکەین. کۆکردنەوەی زانیاریەکانمان لە ئەنجامدا بۆ ئەوەندەی پێویستە کەم دەکەینەوە. دەتوانیت ئەپەکە بە تەواوی بێ ئینتەرنێت بەکاربهێنیت بەبێ دروستکردنی هەژمار.",
+                pol_data_collection_title: "١. زانیارییەکانمان کۆدەکەینەوە",
+                pol_data_collection_desc: "<strong>زانیارییە بازرگانییەکان (لەسەر ئامێرەکەت هەڵدەگیرێن):</strong> کۆگای بەرهەمەکان، زانیاریی کڕیارەکان (ناو، ژمارەی مۆبایل، ئیمەیڵ، ناونیشان، تێبینی)، زانیاری دابینکەرەکان، مامەڵەکانی فرۆشتن و کڕین، تۆماری قەرز و قەرزار، دانانی بودجە، و زانیاری ستاف. <strong>زانیاریی هەژمار:</strong> ئیمەیڵ و وشەی نهێنی (کۆدکراو). زانیاریی ئارەزوومەندانەی هەژماری گووگڵ (ئیمەیڵ، ناو، وێنەی پرۆفایل) کاتێک Google Sign-In بەکاردەهێنیت. <strong>وێنەی بەڵگەی پارەدان:</strong> وێنەی رسیدەکان کە خۆت دەینێزی بە مامەڵەکانەوە، لەسەر ئامێرەکەت هەڵدەگیرێن. <strong>کۆناکەین:</strong> شوێنی GPS، لیستی پەیوەندیەکان، ناسنامەی ڕیکلام، مێژووی گەڕان، زانیاری بایۆمەتریک، یان زانیاری تەندروستی.",
+                pol_use_title: "٢. چۆن زانیارییەکانت بەکاردەهێنین",
+                pol_use_desc: "زانیارییەکانت تەنها بۆ پێشکەشکردنی کارایی ئەپەکە، پشتگیری هەژماری ئارەزوومەندانە (بە ڕەزامەندی تۆ)، دڵنیاکردنەوە لە هەژمار، ڕاستییەکانی AI (تەنها کاتێک خۆت هەڵیان دەبژێری)، پرۆسەی بەشداربوون، و ڕاپۆرتی نەناسراو لەسەر کێشەکان بۆ باشترکردنی جێگیری بەکاردەهێنین.",
+                pol_storage_title: "٣. هەڵگرتنی زانیاری و ئاسایش",
+                pol_storage_desc: "<strong>سەرەتا ناوخۆیی:</strong> هەموو زانیارییە بازرگانییەکان لەسەر ئامێرەکەت لە داتابەیسێکی SQLiteی کۆدکراودا هەڵدەگیرێن. ئەپەکە بە تەواوی بێ ئینتەرنێت کار دەکات. <strong>هاوکاتکردنی هەژماری (ئارەزوومەندانە):</strong> زانیارییەکانت پێش ناردن لەسەر ئامێرەکەت بە AES-256 کۆد دەکرێن. کلیلەکانی کردنەوەی کۆد تەنها لەسەر ئامێرە ڕێگەپێدراوەکانی تۆ دەمێننەوە. <strong>راوێژەکانی ئاسایش:</strong> کۆدکردنی دوولایەنە، دڵنیاکردنەوە لە هەژماری پارێزراو لە ڕێگەی Supabase Auth، و بەڕێوەبردنی خۆکارانەی دانیشتن.",
+                pol_third_party_title: "٤. خزمەتگوزارییەکانی لایەنی سێیەم",
+                pol_third_party_desc: "ئێمە Supabase (دڵنیاکردنەوە و هاوکاتکردنی هەژمار) بەکاردەهێنین، Google Sign-In (OAuth)، Google Play Billing (بەشداربوونەکان)، Google Gemini AI (ڕاستییەکانی بازرگانی — تەنها کاتێک مۆدیەلەکانی AI بەکاردەهێنیت)، و WhatsApp (هاوبەشکردنی بەلگەنامە بۆ دەرەوە کە خۆت دەست پێی دەکەیت). ئێمە زانیارییەکانت نافرۆشین. ئێمە زانیارییەکانت بۆ ڕیکلام یان پرۆفایل بەکارناهێنین.",
+                pol_ai_title: "٥. ڕاگەیەنراوە دەربارەی ناوەڕۆکی AI",
+                pol_ai_desc: "دکان Google Gemini AI بەکاردەهێنێت بۆ پێشکەشکردنی ڕاستییەکانی بازرگانی. ناوەڕۆکی دروستکراو لەلایەن AI تەنها بۆ مەبەستی زانیارییە و پێشنیازی دارایی، یاسایی، یان باجی پیشەگەرانە نییە. زانیارییە بازرگانییەکان بۆ سێرڤەرەکانی گووگڵ دەنێردرێن کاتێک مۆدیەلەکانی AI بەکاردەهێنیت. تکایە زانیارییە کەسییە هەستیارەکان لە پرسیارەکانی AI دانەنێ.",
+                pol_notifications_title: "٦. ئاگادارکردنەوەکانی ناوخۆیی",
+                pol_notifications_desc: "ئێمە ئاگادارکردنەوەکانی ناوخۆیی بۆ بیرهێنانەوەی بەسەرهاتنی قەرزەکان، ئاگادارکردنەوەی کەمبوونی کۆگا، کۆتایی بووجەی ڕۆژانە، و پێداچوونەوەی بەلگەی پارەدان بەکاردەهێنین. ئەمە بە تەواوی لەسەر ئامێرەکەت دروست دەکرێن — هیچ زانیارییەک لەسەر سێرڤەرەکانمان نانێردرێت.",
+                pol_rights_title: "٧. مافەکانی تۆ",
+                pol_rights_desc: "تۆ مافی دەستگەیشتن بە زانیارییەکانت، هەناردن (CSV/JSON/Excel/PDF)، دەستکاری، و سڕینەوەیان لە هەر کاتێکدا هەیە. دەتوانیت هاوکاتکردنی هەژمار لاببەیت، ڕاپۆرتەکانی کێشەکان ڕابگرە، و هەژمارەکەت بە شێوەیەی هەمیشەیی لە ڕێگەی دوگمەی \"سڕینەوەی هەژمار و زانیارییەکان\" لە ڕێکخستنەکانی ئەپەکەدا بسڕیتەوە.",
+                pol_children_title: "٨. تایبەتمەندی منداڵان",
+                pol_children_desc: "دکان مەبەستی بۆ منداڵان لە خوار ١٣ ساڵ نییە. ئێمە بە ئامانج زانیارییە کەسییەکان لە منداڵان لە خوار ١٣ ساڵ کۆناکەینەوە.",
+                pol_deletion_title: "٩. سڕینەوەی هەژمار",
+                pol_deletion_desc: "دەتوانیت هەژمارەکەت و هەموو زانیارییە پەیوەستکراوەکان لە ڕێکخستنەکانی ئەپەکەدا بسڕیتەوە. هەموو زانیارییە هاوکاتکراوەکان بە شێوەیەی هەمیشەیی دەسرێنەوە. ئەم کردارە گەڕانەوەی نییە. لەوانەیە سڕینەوەی ئەپەکە بەبێ بەکارهێنانی \"سڕینەوەی هەژمار\" ببێتە هۆی ماونەوەی زانیارییەکان لەسەر هەژمار.",
+                pol_contact_title: "١٠. پەیوەندیمان پێوە بکە",
+                pol_contact_desc: "ئەگەر هەر پرسیارێکت هەیە دەربارەی ئەم سیاسەتی تایبەتمەندییە، پەیوەندیمان پێوە بکە لە <strong>kirkukimhamad6@gmail.com</strong>. پشتگیری/بەڕێوەبەرایەتی: hamagag52@gmail.com. ئامانجمان وەڵامدانەوە لە ماوەی ٤٨ کاتژمێردایە.",
 
-                footer_text: "© 2026 تیمی دکان. دروستکراوە بۆ باشترینەکان.",
+                footer_text: "© 2026 krdteam. دروستکراوە بۆ باشترینەکان.",
                 footer_link_1: "مەرجەکانی خزمەتگوزاری", footer_link_2: "پشتگیری"
             }
         };
