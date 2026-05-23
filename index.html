@@ -204,9 +204,66 @@
             transition: background 0.4s;
         }
 
+        .delete-form-container { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 24px; }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .delete-success {
+            text-align: center;
+            padding: 40px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        [dir="rtl"] .form-group input,
+        [dir="rtl"] .form-group select,
+        [dir="rtl"] .form-group textarea {
+            text-align: right;
+        }
+        .mobile-menu-toggle { display: none; }
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; right: 20px;
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 12px;
+                gap: 8px;
+                min-width: 160px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
             .hero { padding-top: 140px; }
             nav { padding: 15px 20px; }
             .btn-group { flex-direction: column; align-items: center; }
@@ -220,7 +277,7 @@
 
     <nav>
         <div class="logo">
-            <img src="logo.png" alt="Dukkan Logo" style="height: 48px; width: auto; object-fit: contain;">
+            <img src="image/1.png" alt="Dukkan Logo" style="height: 48px; width: auto; object-fit: contain;">
         </div>
         <div class="nav-right">
             <div class="nav-links">
@@ -228,6 +285,9 @@
                 <a href="#about" data-i18n="nav_about">About</a>
                 <a href="#privacy" data-i18n="nav_privacy">Privacy</a>
             </div>
+            <button class="nav-btn icon-btn mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
             <div class="lang-dropdown">
                 <button class="nav-btn text-btn" id="lang-toggle" style="gap: 6px;">
                     <span id="current-lang">EN</span>
@@ -440,6 +500,45 @@
                 <p data-i18n="terms_contact_desc" style="line-height: 1.8; margin-bottom: 20px;">If you have questions, concerns, or legal notices regarding these Terms:<br><br><strong>Company:</strong> krdteam<br><strong>Email:</strong> kirkukimhamad6@gmail.com<br><strong>Admin/Support:</strong> hamagag52@gmail.com<br><strong>Response Time:</strong> We aim to respond within 48 hours.</p>
             </div>
         </section>
+
+        <!-- Account Deletion Request -->
+        <section id="delete-account">
+            <div class="section-header" data-aos="fade-up">
+                <h2 data-i18n="delete_title">Request Account Deletion</h2>
+                <p data-i18n="delete_desc">Fill out the form below to request deletion of your account and all associated data.</p>
+            </div>
+            <div class="policy-container delete-form-container" data-aos="fade-up" data-aos-delay="200">
+                <form id="delete-form" onsubmit="return handleDeleteSubmit(event);">
+                    <div class="form-group">
+                        <label for="delete-email" data-i18n="delete_email_label">Email Address</label>
+                        <input type="email" id="delete-email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="delete-username" data-i18n="delete_username_label">Username / Account Name</label>
+                        <input type="text" id="delete-username" name="username" required placeholder="Your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="delete-reason" data-i18n="delete_reason_label">Reason for Deletion</label>
+                        <select id="delete-reason" name="reason" required>
+                            <option value="" disabled selected data-i18n="delete_reason_placeholder">Select a reason...</option>
+                            <option value="no_longer_using" data-i18n="delete_reason_1">No longer using the app</option>
+                            <option value="privacy_concerns" data-i18n="delete_reason_2">Privacy concerns</option>
+                            <option value="data_deletion" data-i18n="delete_reason_3">Data deletion request</option>
+                            <option value="switching_service" data-i18n="delete_reason_4">Switching to another service</option>
+                            <option value="other" data-i18n="delete_reason_5">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="delete-description" data-i18n="delete_description_label">Please explain why you want to delete your account</label>
+                        <textarea id="delete-description" name="description" rows="4" required placeholder="Describe your reason in detail..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="delete_submit_btn" style="width: 100%; justify-content: center;">Submit Request</button>
+                </form>
+                <div id="delete-success" class="delete-success" style="display: none;">
+                    <p data-i18n="delete_success_msg">Your request has been submitted. We will process it within 48 hours.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -614,6 +713,20 @@
                 terms_entire_desc: "تشكل هذه الشروط، مع <a href=\"#privacy\" style=\"color: var(--accent);\">سياسة الخصوصية</a>، الاتفاقية الكاملة بينك وبين krdteam بخصوص التطبيق وتحل محل جميع الاتفاقيات والتفاهمات أو التمثيلات السابقة.",
                 terms_contact_title: "٢٠. اتصل بنا",
                 terms_contact_desc: "إذا كانت لديك أسئلة أو مخاوف أو إشعارات قانونية بخصوص هذه الشروط:<br><br><strong>الشركة:</strong> krdteam<br><strong>البريد الإلكتروني:</strong> kirkukimhamad6@gmail.com<br><strong>الإدارة/الدعم:</strong> hamagag52@gmail.com<br><strong>وقت الرد:</strong> نهدف للرد خلال ٤٨ ساعة.",
+                delete_title: "طلب حذف الحساب",
+                delete_desc: "املأ النموذج أدناه لطلب حذف حسابك وجميع البيانات المرتبطة به.",
+                delete_email_label: "عنوان البريد الإلكتروني",
+                delete_username_label: "اسم المستخدم / اسم الحساب",
+                delete_reason_label: "سبب الحذف",
+                delete_reason_placeholder: "اختر سبباً...",
+                delete_reason_1: "لم أعد أستخدم التطبيق",
+                delete_reason_2: "مخاوف تتعلق بالخصوصية",
+                delete_reason_3: "طلب حذف البيانات",
+                delete_reason_4: "الانتقال إلى خدمة أخرى",
+                delete_reason_5: "سبب آخر",
+                delete_description_label: "يرجى شرح سبب رغبتك في حذف حسابك",
+                delete_submit_btn: "إرسال الطلب",
+                delete_success_msg: "تم إرسال طلبك. سنعالجه خلال 48 ساعة.",
                 footer_text: "© 2026 krdteam. صُمم للتميز.",
                 footer_link_1: "شروط الخدمة", footer_link_2: "الدعم"
             },
@@ -697,6 +810,20 @@
                 terms_termination_desc: "<strong>١١.١ مافی تۆ بۆ کۆتایی هێنان:</strong> دەتوانیت هەر کاتێک لە بەکارهێنانی ئەپەکە وەستیت. بۆ سڕینەوەی هەژمارەکەت و هەموو زانیارییە پەیوەستکراوەکان: ئەپەکە بکەرەوە و بڕۆ بۆ <strong>ڕێکخستنەکان</strong>، <strong>سڕینەوەی هەژمار</strong> هەڵبژێرە، و سڕینەوە پشتڕاست بکەرەوە. سڕینەوەی هەژمار <strong>گەڕانەوەی نییە</strong>. هەموو زانیارییە هاوکاتکراوەکان بە شێوەیەی هەمیشەیی دەسڕدرێنەوە. زانیارییە ناوخۆییەکان دەتوانرێن بسڕدرێنەوە بە سڕینەوەی ئەپەکە.<br><br><strong>١١.٢ مافی ئێمە بۆ کۆتایی هێنان:</strong> ئێمە مافی ئەوەمان هەیە دەستگەیشتنت بۆ ئەپەکە لە هەر کاتێکدا ڕابگرین یان کۆتایی پێبهێنین، بە یا بێ ئاگادارکردنەوە، ئەگەر: ئەم مەرجانە بپچڕێنن؛ گومانمان لە چالاکییەکی فێڵی یان نایاسایی هەبێت؛ ئەپەکە یان تایبەتمەندییەکی دیاریکراو ڕابگرین؛ یان یاسا یان داوای حکومەت پێویستی پێ بکات. لە کاتی کۆتایی هێناندا، مافی بەکارهێنانی ئەپەکەت فۆڕاً کۆتایی دێت. مەرجەکان کە لە بنەڕەتدا دەبێت لە کاتی کۆتایی هێناندا بمێننەوە ئەوا دەمێننەوە.",
                 terms_warranty_title: "١٢. لابردنی ضمان",
                 terms_warranty_desc: "ئەپەکە بە <strong>\"وەک خۆی\"</strong> و <strong>\"وەک بەردەستە\"</strong> دابین دەکرێت بەبێ هیچ ضمانێک لە هەر جۆرێکدا، نە تەنانەت ئاشکرا و نە شاردراوە، لەنێویاندا و نەک تەنها سنووردارە: ضمانەکانی شاراوەی بازرگانی، گونجاوەتی بۆ مەبەستێکی دیاریکراو، یان نەپچڕان؛ ضمانەکانی ئەوەی ئەپەکە بەردەوام یان بێ هەڵە یان پارێزراوە؛ و ضمانەکانی ئەوەی زانیاریەکان ناسڕدرێنەوە و ناشکێن. لە کاتێکدا ئێمە هەوڵی کارگێڕی باش دەدەین بۆ دڵنیاکردنەوە لە متمانە، ئێمە ضمان ناکەین کە ئەپەکە باوەرێکی تایبەتی تۆ دابین دەکات، هەڵەکان لە نەرماماڵەکەدا چاک دەکرێنەوە، یان ئەپەکە گونجاوە لەگەڵ هەموو ئامێرەکان و سیستەمەکانی کارپێکردن. تۆ دڵنیا دەبیت کە لەدەستدانی زانیارییە بازرگانییەکان دەتوانێت ڕووبدات بەهۆی شکستی ئامێرەوە یان سڕینەوەی ئەپەکە یان کەمی پاڵپشتی. بە توندەوە پێشنیار دەکەین چالاککردنی هاوکاتکردنی هەژمار یان هەناردنی زانیارییەکانت بە شێوەیەکی بەردەوام.",
+                delete_title: "داواکردنی سڕینەوەی هەژمار",
+                delete_desc: "فۆرمەکەی خوارەوە پڕ بکەرەوە بۆ داواکردنی سڕینەوەی هەژمارەکەت و هەموو زانیارییە پەیوەستکراوەکان.",
+                delete_email_label: "ناونیشانی ئیمەیڵ",
+                delete_username_label: "ناوی بەکارهێنەر / ناوی هەژمار",
+                delete_reason_label: "هۆکاری سڕینەوە",
+                delete_reason_placeholder: "هۆکارێک هەڵبژێرە...",
+                delete_reason_1: "چیتر ئەپەکە بەکارناهێنم",
+                delete_reason_2: "نیگەرانی تایبەتمەندی",
+                delete_reason_3: "داواکردنی سڕینەوەی زانیاری",
+                delete_reason_4: "گۆڕین بۆ خزمەتگوزارییەکی تر",
+                delete_reason_5: "هۆکارێکی تر",
+                delete_description_label: "تکایە ڕوون بکەرەوە بۆچی دەتەوێت هەژمارەکەت بسڕیتەوە",
+                delete_submit_btn: "ناردنی داواکاری",
+                delete_success_msg: "داواکارییەکەت نێردرا. لە ماوەی ٤٨ کاتژمێردا پرۆسە دەکەین.",
                 footer_link_1: "مەرجەکانی خزمەتگوزاری", footer_link_2: "پشتگیری"
             }
         };
@@ -767,6 +894,43 @@
         themeToggle.addEventListener('click', () => {
             applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         });
+
+        // --- Mobile Menu ---
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                });
+            });
+        }
+
+        // --- Account Deletion Form ---
+        function handleDeleteSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('delete-email').value;
+            const username = document.getElementById('delete-username').value;
+            const reason = document.getElementById('delete-reason').value;
+            const description = document.getElementById('delete-description').value;
+            
+            const subject = encodeURIComponent('Account Deletion Request - ' + username);
+            const body = encodeURIComponent(
+                'Email: ' + email + '\n' +
+                'Username: ' + username + '\n' +
+                'Reason: ' + reason + '\n\n' +
+                'Description:\n' + description
+            );
+            
+            window.location.href = 'mailto:kirkukimhamad6@gmail.com?subject=' + subject + '&body=' + body;
+            
+            document.getElementById('delete-form').style.display = 'none';
+            document.getElementById('delete-success').style.display = 'block';
+            return false;
+        }
 
         const saved = localStorage.getItem('theme')
             || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
